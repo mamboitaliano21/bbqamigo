@@ -1,5 +1,10 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{bbqAmigo}
+	h1= title
+	p Welcome to #{title}
+	- uniList = []
+	each val in jsonx
+		li
+			a(href="/eventList/#{val.value.Uni}")= val.value.Uni
+		- uniList.push(val.value.Uni)

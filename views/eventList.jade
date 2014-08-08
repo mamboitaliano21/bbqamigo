@@ -1,0 +1,31 @@
+extends layout
+
+block content
+	h1= title
+	p Welcome to #{title}
+	- uniList = []
+	each val in jsonx
+		li
+			p #{val.value.Picture}
+			p #{val.value.Uni}
+			p #{val.value.Time}
+			p #{val.value.Location}
+			p #{val.value.Organizer}
+			p #{val.value.Description}
+	div
+		form(action='/registerEvent',method='post', id="registerEvent")
+			p University
+			input(id='Uni', type='text', value='University',name='Uni')
+			p Location
+			input(id='Location',type='text',value='Location',name='Location')
+			p Time
+			input(id='Time',type='text',value='Time',name='Time')
+			p Organizer
+			input(id='Organizer',type='text',value='Organizer',name='Organizer')
+			p Description
+			input(id='Description',type='text',value='Description',name='Description')
+			p Picture
+			input(id='Picture', type='text', value='Picture',name='Picture')
+			input(type='submit',value='Register Event')
+			
+			
