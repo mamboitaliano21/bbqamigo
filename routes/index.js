@@ -5,14 +5,14 @@ var router = express.Router();
 router.get('/', function(req, res) {
   var db = req.db
   var json1 = {}
-  db.view('freeFoodViews/getEventsByUni', function (err, response) {
-
-	//var jpost = JSON.stringify(res.rows);
-	var json = response.rows
+  db.view('freeFoodViews/getUniversities', {group: true}, function (err, response) {
+	var jpost = JSON.stringify(response);
+	 var json = response
 	
 	res.render('index', {jsonx: json});		
 	});
 });
+
 router.get('/eventList/:uni', function(req, res) {
 	var db = req.db
     var uni = req.params.uni
