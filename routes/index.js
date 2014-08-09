@@ -16,8 +16,7 @@ router.get('/', function(req, res) {
 router.get('/eventList/:uni', function(req, res) {
 	var db = req.db
     var uni = req.params.uni
-    db.view('freeFoodViews/getEventsByUni', {key: uni}, function (err, doc) {
-//		console.log(doc)
+    db.view('freeFoodViews/getEventsByUni', {key: uni,include_docs: true}, function (err, doc) {
 		var json = doc.rows
 		res.render('eventList', {jsonx: json});	
 	});
