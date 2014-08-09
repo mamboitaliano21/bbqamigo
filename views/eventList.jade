@@ -13,7 +13,7 @@ block content
 			p #{val.value.Organizer}
 			p #{val.value.Description}
 	div
-		form(action='/registerEvent',method='post', id="registerEvent")
+		form(action='/registerEvent',method='post', id="registerEvent", name="registerEvent")
 			p University
 			input(id='Uni', type='text', value='University',name='Uni')
 			p Location
@@ -27,5 +27,18 @@ block content
 			p Picture
 			input(id='Picture', type='text', value='Picture',name='Picture')
 			input(type='submit',value='Register Event')
-			
-			
+	head
+	
+	script(type='text/javascript', src="/javascripts/jquery-1.11.1.min.js").
+		$(function() {
+			$("#registerEvent").submit(function(event) {
+				event.preventDefault(); // Stops browser from navigating away from page
+				var data;
+				alert("lol");
+				// build a json object or do something with the form, store in data
+				$.post('/registerEvent', data, function(resp) {
+					alert(resp);
+					// do something when it was successful
+				});
+			});
+		});
