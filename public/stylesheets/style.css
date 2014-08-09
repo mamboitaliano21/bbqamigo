@@ -97,7 +97,8 @@
 	
 	header-image #title a {
         background: url ( 'images/logo.png') no repeat;   
-        width: 50%;
+        position: relative;
+        width:320px;
     	}
     	
 	header .byline {
