@@ -35,6 +35,7 @@ router.post('/registerEvent', function(req,res){
 	var db = req.db
 	db.save(req.body)
 	console.log(req.body);
+	res.render('thankYou');
 })
 
 module.exports = router;
