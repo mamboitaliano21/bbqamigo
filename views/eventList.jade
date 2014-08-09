@@ -13,7 +13,7 @@ block content
 	div
 		h2 Insert new Event
 		form(action='/registerEvent',method='post',id="registerEvent")
-			input(id='Uni', type='hidden', value='#{jsonx[0].value.Uni} ',name='Uni')
+			input(id='Uni', type='hidden', value='#{jsonx[0].value.Uni}',name='Uni')
 			p Location
 			input(id='Location',type='text',value='Location',name='Location')
 			p Time
@@ -23,7 +23,7 @@ block content
 			p Description
 			input(id='Description',type='text',value='Description',name='Description')
 			p Picture
-			input(id='Picture', type='text', value='Picture',name='Picture')
+			input(id='Picture', type='file', name='Picture')
 			input(type='submit',value='Register Event')
 	
 	script(type='text/javascript').
