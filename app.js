@@ -75,6 +75,8 @@ app.use(function(req,res,next){
 	next();
 });
 
+app.set('domain','0.0.0.0');
+app.set('port', process.env.PORT || 3000);
 app.use('/', routes);
 app.use('/users', users);
 
