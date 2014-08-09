@@ -5,12 +5,12 @@ block content
 	- uniList = []
 	each val in jsonx
 		li
-			p #{val.value.Picture}
-			p #{val.value.Uni}
-			p #{val.value.Time}
-			p #{val.value.Location}
 			p #{val.value.Organizer}
+			p #{val.value.Location}
+			p #{val.value.Time}
 			p #{val.value.Description}
+			p #{val.value.Uni}
+			
 	div
 		h2 Insert new Event
 		form(action='/registerEvent',method='post',id="registerEvent")
@@ -23,8 +23,8 @@ block content
 			input(id='Organizer',type='text',value='Organizer',name='Organizer')
 			p Description
 			input(id='Description',type='text',value='Description',name='Description')
-			p Picture
-			input(id='Picture', type='file', name='Picture')
+			<!---p Picture-->
+			<!--input(id='Picture', type='file', name='Picture')-->
 			input(type='submit',value='Register Event')
 	
 	script(type='text/javascript').

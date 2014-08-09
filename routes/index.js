@@ -32,7 +32,7 @@ router.get('/eventList/:uni', function(req, res) {
   // });
 	
 	//console.log(jpost);
-router.post('/registerEvent', function(req,res){
+router.post('/registerEvent', function(req,res, next){
 	var db = req.db;
 	// var uni = req.body.Uni;
 	// var location = req.body.Location;
@@ -50,7 +50,10 @@ router.post('/registerEvent', function(req,res){
 	// var base64data = new Buffer(data).toString('base64');
 	   
 	// });
+	// var image = req.files.;
+	// console.log(image);
 	// console.log(base64data);
+	console.log(req);
 	var jsonx = req.body;
 	// delete jsonx.Picture;
 	var json = jsonx;
