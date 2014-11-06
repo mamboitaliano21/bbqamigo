@@ -8,3 +8,10 @@ Build using Node.jS back-end , Couch DB front back-end and jade front-end
 
 TODO-
 Beautify website using jquery
+
+
+To use-
+npm start
+
+Dependencies
+Node.js
